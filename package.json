@@ -1,0 +1,31 @@
+{
+  "name": "cosmoclicks",
+  "version": "1.0.0",
+  "description": "Explore and download all space related pictures, also store your favourites!",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "proxy": "http://localhost:5000",
+  "keywords": [
+    "Space",
+    "Images",
+    "NASA",
+    "Astronomy",
+    "Cosmology",
+    "Galactic"
+  ],
+  "author": "Jasmine",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2",
+    "passport": "^0.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
