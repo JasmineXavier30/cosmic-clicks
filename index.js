@@ -18,24 +18,25 @@ const NASA_API_KEY = process.env.NASA_API_KEY;
 
 //Routes
 server.use("/user", require("./routes/user"));
+server.use("/images", require("./routes/images"));
 
 server.get("/", (req, res) => {
     res.end("Hello World");
 });
 
-server.get("/api/images", (req, res) => {
+server.get("/images", (req, res) => {
     const images = [{name: 'sample'}];
     res.json({images});
 })
 
-server.get("/api/apod", async (req, res) => {
+server.get("/apod", async (req, res) => {
     console.log("coming to apod")
     try {
         const apod = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${NASA_API_KEY}`);
         const apodJSON = await apod.json();
         res.json({ apod: apodJSON })
     } catch(e) {
-        console.log("Error on /apod: ", e)
+        console.log("Error on index/apod: ", e)
     }
 })
 
